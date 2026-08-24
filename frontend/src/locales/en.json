@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "home": "Home",
+    "liveFeed": "Live Feed",
+    "playground": "Playground",
+    "live": "Live"
+  },
+  "home": {
+    "eyebrow": "AI-Powered Fraud Detection",
+    "tagline": "Anovix doesn't just flag suspicious transactions — it tells you exactly why, with a plain-English explanation behind every alert.",
+    "cta": "View Live Dashboard",
+    "whatsInside": "What's inside",
+    "whatsInsideSub": "Everything Anovix brings to fraud detection.",
+    "feature1Title": "Live Transaction Feed",
+    "feature1Desc": "Watch transactions come in and see which ones get flagged, in real time.",
+    "feature2Title": "Try It Yourself",
+    "feature2Desc": "Submit a test transaction and watch Anovix score it live, no pre-recorded demo.",
+    "feature3Title": "Explainable AI",
+    "feature3Desc": "Every flag comes with plain-English reasoning — unusual amount, odd timing, unfamiliar location.",
+    "feature4Title": "Real-Time Scoring",
+    "feature4Desc": "Risk scores are computed instantly using behavioral and geo-anomaly signals."
+  },
+  "playground": {
+    "eyebrow": "Live Playground",
+    "title": "Try It Yourself",
+    "subtitle": "Enter a test transaction and watch Anovix score it live — no pre-recorded demo.",
+    "amount": "Amount (₹)",
+    "location": "Location",
+    "time": "Time",
+    "submit": "Score Transaction",
+    "scoring": "Scoring...",
+    "flagged": "Flagged as Suspicious",
+    "safe": "Looks Safe",
+    "whyScore": "Why this score"
+  }
+}
