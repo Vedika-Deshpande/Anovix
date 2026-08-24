@@ -1,4 +1,4 @@
-export const BASE_URL = "http://192.168.1.2:8000";
+export const BASE_URL = "https://anovix.onrender.com";
 
 export async function analyzeTransaction(transactionData) {
   const response = await fetch(`${BASE_URL}/transaction`, {

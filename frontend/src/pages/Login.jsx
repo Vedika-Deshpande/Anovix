@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { LogIn, Loader2 } from 'lucide-react'
 import SpecularButton from '../components/SpecularButton'
 
-const BASE_URL = "http://192.168.1.2:8000"
+const BASE_URL = "https://anovix.onrender.com"
 
 function Login() {
   const navigate = useNavigate()
