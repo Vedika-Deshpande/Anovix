@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/*
+  Anovix design tokens — steel blue + terracotta, dark/glassy
+*/
+@theme {
+  /* surfaces */
+  --color-bg: #0a0f1a;
+ --color-panel: #1a2135;
+--color-panel-alt: #1c2438;  /* pehle: #171e2b — ab thoda lighter */
+--color-border: #2f3d56;     /* pehle: #253044 — thoda brighter */
+
+  /* brand — steel blue */
+  --color-brand: #6fa8dc;
+  --color-brand-bright: #9fc5e8;
+
+  /* accent — terracotta */
+  --color-accent: #dd7e6b;
+  --color-accent-bright: #e6b8af;
+   
+  /* teal — dusty teal, from the deck */
+  --color-teal: #a2c4c9;
+  --color-teal-bright: #c7dedf;
+
+  /* lavender — soft pink-lavender, from the deck */
+  --color-lavender: #ead1dc;
+  --color-lavender-bright: #f5e6ee;
+
+  /* decorative glow tones (hero background only) */
+  --color-glow-blue: #cfe2f3;
+  --color-glow-peach: #fce5cd;
+  --color-glow-yellow: #fff2cc;
+  --color-glow-rose: #f4cccc;
+
+  /* text */
+  --color-ink: #f3f6fa;
+  --color-ink-muted: #7e8ca0;
+
+  /* risk semantics */
+  --color-safe: #22c55e;
+  --color-warn: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* animated gradient "shine" sweep for hero title */
+@keyframes shine-sweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.shine-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ink) 20%,
+    var(--color-glow-blue) 35%,
+    var(--color-brand-bright) 45%,
+    var(--color-accent-bright) 55%,
+    var(--color-ink) 70%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine-sweep 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shine-text {
+    animation: none;
+  }
+}
+.specular-btn {
+  position: relative;
+  background: var(--color-panel);
+  z-index: 0;
+}
+
+.specular-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0%,
+    transparent 70%,
+    var(--color-brand-bright) 85%,
+    var(--color-accent-bright) 92%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: rotate-border 3s linear infinite;
+  z-index: -1;
+}
+
+.specular-btn:hover::before {
+  opacity: 1;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  to { --angle: 360deg; }
+}
+
+.specular-btn:hover {
+  box-shadow: 0 0 24px -4px color-mix(in srgb, var(--color-brand-bright) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .specular-btn::before { animation: none; }
+}
+@keyframes pulse-danger {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+.animate-pulse-danger {
+  animation: pulse-danger 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-danger { animation: none; }
+}

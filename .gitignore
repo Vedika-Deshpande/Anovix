@@ -1,7 +1,6 @@
+node_modules/
+*.zip
+.env
 venv/
 __pycache__/
-.env
-*.zip
-node_modules/
 .vscode/
-backend/data/creditcard.csv
