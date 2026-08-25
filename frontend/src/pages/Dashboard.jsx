@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react'
 import { Download } from 'lucide-react'
 import StatCard from '../components/StatCard'
 import TransactionCard from '../components/TransactionCard'
-import { getTransactions } from '../api/api'
-
-const BASE_URL = "http://127.0.0.1:8000"
+import { getTransactions, BASE_URL } from '../api/api'
 
 function Dashboard() {
   const [transactions, setTransactions] = useState([])
